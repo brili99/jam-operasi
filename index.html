@@ -58,12 +58,12 @@
                                 <tr>
                                     <th>Temperature</th>
                                     <th> : </th>
-                                    <th>27℃</th>
+                                    <th id="temp">27℃</th>
                                 </tr>
                                 <tr>
                                     <th>Humidity</th>
                                     <th> : </th>
-                                    <th>85%</th>
+                                    <th id="humid">85%</th>
                                 </tr>
                             </table>
                         </div>
@@ -119,6 +119,14 @@
     </div>
     <script src="stopwatch.js"></script>
     <script src="jam.js"></script>
+    <script>
+        setInterval(function () {
+            $.getJSON("dht22.json", function (data) {
+                $('#temp').html(data['temperature'] + `℃`);
+                $('#humid').html(data['humidity'] + `%`);
+            });
+        }, 1000);
+    </script>
 </body>
 
 </html>
