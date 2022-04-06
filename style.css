@@ -1,0 +1,76 @@
+.stopwatch {
+    display: grid;
+    justify-items: center;
+    grid-row-gap: 23px;
+    width: 100%;
+    padding-top: 25px;
+    background-color: #2c334788;
+    color: #ffffff;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 700px;
+    width: 700px;
+
+    border: 2px solid;
+    border-radius: 50%;
+}
+
+.time {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 48px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+
+.container_cus {
+    /* width: 1920px; */
+    /* min-width: 1920px; */
+    height: 1080px;
+    min-height: 1080px;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+    outline: none;
+}
+
+th {
+    text-align: left;
+    margin-right: 10px;
+}
+
+#playButton {
+    display: block;
+}
+
+#pauseButton {
+    display: none;
+}
+
+#display {
+    font-size: 8vw;
+}
+
+#jam_card {
+    background-color: #2c334788;
+    color: #ffffff;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- JQuery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <!-- DataTables -->
+    <script src="node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
+    <script src="node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> -->
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="container-fluid container_cus">
+        <div class="row h-100">
+            <div class="col-6 h-100 text-center d-flex justify-content-center align-items-center">
+                <!-- Tanggal jam -->
+
+                <div class="card" id="jam_card">
+                    <div class="card-body">
+                        <div class="clock__content grid">
+                            <div>
+                                <div class="clock__text">
+                                    <div class="clock__text-hour" id="text-hour"></div>
+                                    <div class="clock__text-minutes" id="text-minutes"></div>
+                                    <div class="clock__text-ampm" id="text-ampm"></div>
+                                </div>
+
+                                <div class="clock__date">
+                                    <!-- <span id="date-day-week"></span> -->
+                                    <span id="date-day"></span>
+                                    <span id="date-month"></span>
+                                    <span id="date-year"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="w-100 text-center" style="text-align: center;">
+                            <table style="margin: auto; font-size: 2vw;">
+                                <tr>
+                                    <th>Temperature</th>
+                                    <th> : </th>
+                                    <th>27℃</th>
+                                </tr>
+                                <tr>
+                                    <th>Humidity</th>
+                                    <th> : </th>
+                                    <th>85%</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 h-100">
+                <!-- Stop watch -->
+                <div class="stopwatch h-100">
+
+                    <h1>Countdown</h1>
+                    <div class="circle">
+                        <span class="time" id="display">00:00:00</span>
+                    </div>
+
+                    <div class="controls">
+                        <button class="buttonPlay">
+                            <img id="playButton" src="icons/play-button.svg" />
+                            <img id="pauseButton" src="icons/pause-button.svg" />
+                        </button>
+
+                        <button class="buttonReset">
+                            <img id="resetButton" src="icons/reset-button.svg" />
+                        </button>
+
+                        <button class="buttonConfig" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <img id="configButton" src="icons/gear-button.svg" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Setting countdown</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="time" class="form-control" id="value_time_countdown">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        id="save_countdown">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="stopwatch.js"></script>
+    <script src="jam.js"></script>
+</body>
+
+</html>
