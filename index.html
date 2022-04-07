@@ -24,6 +24,9 @@
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> -->
 
+    <!-- Timepicker.js -->
+    <script src="node_modules/timepicker.js/dist/timepicker.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
 </head>
@@ -107,7 +110,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="time" class="form-control" id="value_time_countdown" value="00:00:00">
+                    <!-- <input type="time" class="form-control" id="value_time_countdown" value="01:00"> -->
+                    <input type="text" class="form-control" id="value_time_countdown" placeholder="Time">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -120,10 +124,27 @@
     <script src="stopwatch.js"></script>
     <script src="jam.js"></script>
     <script>
+        var timepicker = new TimePicker('#value_time_countdown', {
+            lang: 'en',
+            theme: 'light',
+            template: 'modal'
+        });
+        timepicker.on('change', function (evt) {
+            var value = (evt.hour || '00') + ':' + (evt.minute || '00');
+            evt.element.value = value;
+        });
+
         setInterval(function () {
-            $.getJSON("dht22.json", function (data) {
-                $('#temp').html(data['temperature'] + `℃`);
-                $('#humid').html(data['humidity'] + `%`);
+            // $.getJSON("dht22.json", function (data) {
+            //     console.log("data:" + data);
+            //     $('#temp').html(data['temperature'] + `℃`);
+            //     $('#humid').html(data['humidity'] + `%`);
+            // });
+
+            $.getJSON("apiRoom.php", function (data) {
+                console.log("data:" + data);
+                $('#temp').html(data['temp'] + `℃`);
+                $('#humid').html(data['humid'] + `%`);
             });
         }, 1000);
     </script>
