@@ -39,6 +39,7 @@ sudo mysql -u root
 CREATE DATABASE rscounter;
 CREATE USER 'dbrs'@'localhost' IDENTIFIED BY 'bismillah';
 GRANT ALL PRIVILEGES ON *.* TO 'dbrs'@'localhost';
+exit
 sudo mysql -u root -p rscounter < rscounter.sql
 
 
