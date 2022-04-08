@@ -11,6 +11,6 @@ sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 ```
 lalu tambahkan line berikut
 ```
-@chromium --kiosk http://localhost/
-@lxterminal -e python3 /var/www/html/main.py
+@chromium --kiosk http://localhost/jam-operasi/
+@lxterminal -e python3 /var/www/html/jam-operasi/main.py
 ```
