@@ -37,7 +37,7 @@ function print(txt) {
 
 // Create "start", "pause" and "reset" functions
 function play() {
-    var audio = new Audio('~/alarm.wav');
+    var audio = new Audio('alarm.wav');
     audio.loop = false;
     audio.play();
 }
