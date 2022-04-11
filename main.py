@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(
   database="rscounter"
 )
 DHT_SENSOR = Adafruit_DHT.DHT22
-DHT_PIN = 4  # GPIO 4
+DHT_PIN = 17  # GPIO 17
 ts = time.time()
 
 humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
