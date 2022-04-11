@@ -5,6 +5,11 @@ Khusus Raspberry pi, selebih itu perlu dilakukan tindak lanjut di file python ba
 
 Resolusi yang digunakan pada monitor 1360x768, jika ingin lebih dari itu edit css pada .circle agar lebih besar atau kecil. (Belum dapet agar responsif)
 
+Pin DHT22 digunakan pada pin GPIO17
+
+Untuk menggunakan DS3231 cek step dari link berikut:
+https://ludigoporitas.wordpress.com/2018/01/03/menambahkan-dan-konfigurasi-module-rtc-ds3231-pada-raspberry-pi-3-raspbian-stretch/
+
 Setting autostart 
 ```sh
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
