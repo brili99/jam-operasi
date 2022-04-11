@@ -36,6 +36,11 @@ function print(txt) {
 }
 
 // Create "start", "pause" and "reset" functions
+function play() {
+    var audio = new Audio('~/alarm.wav');
+    audio.loop = false;
+    audio.play();
+}
 
 function start() {
     // startTime = Date.now() - elapsedTime;
@@ -48,6 +53,7 @@ function start() {
     timerInterval = setInterval(function printTime() {
         elapsedTime = last_time - Date.now();
         if (elapsedTime <= 0) {
+            play();
             print("00:00:00");
             reset();
         } else {
