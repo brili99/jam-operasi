@@ -43,23 +43,23 @@ function play() {
 }
 
 function start() {
-    // startTime = Date.now() - elapsedTime;
-    // timerInterval = setInterval(function printTime() {
-    //     elapsedTime = Date.now() - startTime;
-    //     print(timeToString(elapsedTime));
-    // }, 10);
-
-    last_time = Date.now() + time_countdown;
+    startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(function printTime() {
-        elapsedTime = last_time - Date.now();
-        if (elapsedTime <= 0) {
-            play();
-            print("00:00:00");
-            reset();
-        } else {
-            print(timeToString(elapsedTime));
-        }
+        elapsedTime = Date.now() - startTime;
+        print(timeToString(elapsedTime));
     }, 10);
+
+    // last_time = Date.now() + time_countdown;
+    // timerInterval = setInterval(function printTime() {
+    //     elapsedTime = last_time - Date.now();
+    //     if (elapsedTime <= 0) {
+    //         play();
+    //         print("00:00:00");
+    //         reset();
+    //     } else {
+    //         print(timeToString(elapsedTime));
+    //     }
+    // }, 10);
 
     showButton("PAUSE");
 }
